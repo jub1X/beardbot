@@ -6,6 +6,7 @@ public class BeardStart {
 
 	public static void main(String[] args) {
 		WebDriver webDriver;
+		System.out.println("testing commit");
 	}
 
 }
