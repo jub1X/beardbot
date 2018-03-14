@@ -21,6 +21,7 @@ public class BeardDriver {
 	public void startSupremeBot(WebDriver webDriver) throws BeardRunTimeException {
 		supremeShopAllPage = new SupremeShopAllPage(webDriver);
 		supremeShopAllPage.openSupremeShopAllPage();
+		supremeShopAllPage.openSupremeShopNewPage();
 	}
 
 	public WebDriver setupDriver() {
