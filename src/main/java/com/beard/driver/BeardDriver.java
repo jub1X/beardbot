@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import com.beard.exceptions.BeardRunTimeException;
 import com.beard.pages.SupremeShopAllPage;
 
 public class BeardDriver {
@@ -12,12 +13,12 @@ public class BeardDriver {
 	
 	private SupremeShopAllPage supremeShopAllPage;
 	
-	public void startBot() {
+	public void startBot() throws BeardRunTimeException {
 		WebDriver webDriver = setupDriver();
 		startSupremeBot(webDriver);
 	}
 	
-	public void startSupremeBot(WebDriver webDriver) {
+	public void startSupremeBot(WebDriver webDriver) throws BeardRunTimeException {
 		supremeShopAllPage = new SupremeShopAllPage(webDriver);
 		supremeShopAllPage.openSupremeShopAllPage();
 	}
