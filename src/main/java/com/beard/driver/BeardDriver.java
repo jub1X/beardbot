@@ -1,5 +1,7 @@
 package com.beard.driver;
 
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Controller;
 import com.beard.api.SupremeBotAPInterface;
@@ -18,7 +20,8 @@ public class BeardDriver {
 		ChromeBotWebDriver chromeBotWebDriver = new ChromeBotWebDriver();
 		WebDriver webDriver = chromeBotWebDriver.createNewChromeWebDriver();
 		supremeBotAPI.openSupremeShopAllPage(webDriver);
-		supremeBotAPI.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver);
+		Map<String, Boolean> allProductMap = supremeBotAPI.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver);
+		System.out.println(allProductMap.toString());
 		webDriver.close();
 	}
 }
