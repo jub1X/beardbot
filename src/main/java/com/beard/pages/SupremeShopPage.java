@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import com.beard.exceptions.BeardRunTimeException;
 import com.beard.locators.SupremeEntireItemsLocator;
 
-public class SupremeShopAllPage extends SupremeEntireItemsLocator {
+public class SupremeShopPage extends SupremeEntireItemsLocator {
 
 	private final static String SUPREME_WEBSITE_ALL_PRODUCTS = "http://www.supremenewyork.com/shop/all";
 	private final static String SUPREME_WEBSITE_ALL_PRODUCTS_NEW = "http://www.supremenewyork.com/shop/new";

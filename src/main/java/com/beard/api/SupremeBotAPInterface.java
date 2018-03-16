@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.beard.driver.ChromeBotWebDriver;
 import com.beard.exceptions.BeardRunTimeException;
-import com.beard.pages.SupremeShopAllPage;
+import com.beard.pages.SupremeShopPage;
 
 public interface SupremeBotAPInterface {
 
@@ -17,6 +17,6 @@ public interface SupremeBotAPInterface {
 
 	public Map<String, Boolean> retrieveAllNewProductLinksWithSoldOutStatus(WebDriver webDriver) throws BeardRunTimeException;
 
-	public void setSupremeShopAllPage(SupremeShopAllPage supremeShopAllPage);
+	public void setSupremeShopAllPage(SupremeShopPage supremeShopAllPage);
 
 }

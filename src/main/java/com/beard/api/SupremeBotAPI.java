@@ -4,11 +4,11 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 
 import com.beard.exceptions.BeardRunTimeException;
-import com.beard.pages.SupremeShopAllPage;
+import com.beard.pages.SupremeShopPage;
 
 public class SupremeBotAPI implements SupremeBotAPInterface {
 
-	private SupremeShopAllPage supremeShopAllPage;
+	private SupremeShopPage supremeShopAllPage;
 
 	@Override
 	public Map<String, Boolean> retrieveAllNewProductLinksWithSoldOutStatus(WebDriver webDriver) throws BeardRunTimeException {
@@ -24,7 +24,7 @@ public class SupremeBotAPI implements SupremeBotAPInterface {
 		supremeShopAllPage.openSupremeShopNewPage(webDriver);
 	}
 	
-	public void setSupremeShopAllPage(SupremeShopAllPage supremeShopAllPage) {
+	public void setSupremeShopAllPage(SupremeShopPage supremeShopAllPage) {
 		this.supremeShopAllPage = supremeShopAllPage;
 	}
 

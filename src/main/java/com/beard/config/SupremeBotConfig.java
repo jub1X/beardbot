@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.beard.api.SupremeBotAPI;
 import com.beard.api.SupremeBotAPInterface;
-import com.beard.pages.SupremeShopAllPage;
+import com.beard.pages.SupremeShopPage;
 
 @Configuration
 public class SupremeBotConfig {
@@ -17,8 +17,8 @@ public class SupremeBotConfig {
 	}
 	
 	@Bean
-	public SupremeShopAllPage supremeShopAllPage() {
-		SupremeShopAllPage supremeShopAllPage = new SupremeShopAllPage();
+	public SupremeShopPage supremeShopAllPage() {
+		SupremeShopPage supremeShopAllPage = new SupremeShopPage();
 		return supremeShopAllPage;	
 	}
 	
