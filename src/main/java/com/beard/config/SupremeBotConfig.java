@@ -12,7 +12,7 @@ public class SupremeBotConfig {
 	@Bean
 	public SupremeBotAPInterface supremeBotAPI() {
 		SupremeBotAPI supremeBotAPI = new SupremeBotAPI();
-		supremeBotAPI.setSupremeShopAllPage(supremeShopAllPage());
+		supremeBotAPI.setSupremeShopPage(supremeShopAllPage());
 		return supremeBotAPI;
 	}
 	

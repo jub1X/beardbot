@@ -8,24 +8,24 @@ import com.beard.pages.SupremeShopPage;
 
 public class SupremeBotAPI implements SupremeBotAPInterface {
 
-	private SupremeShopPage supremeShopAllPage;
+	private SupremeShopPage supremeShopPage;
 
 	@Override
-	public Map<String, Boolean> retrieveAllNewProductLinksWithSoldOutStatus(WebDriver webDriver) throws BeardRunTimeException {
-		return supremeShopAllPage.retrieveAllAvailableProductItemsAndSoldOutStatus(webDriver);
+	public Map<String, Boolean> retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(WebDriver webDriver) throws BeardRunTimeException {
+		return supremeShopPage.retrieveAllAvailableProductItemsAndSoldOutStatus(webDriver);
 	}
 	@Override
 	public void openSupremeShopAllPage(WebDriver webDriver) throws BeardRunTimeException {
-		supremeShopAllPage.openSupremeShopAllPage(webDriver);
+		supremeShopPage.openSupremeShopAllPage(webDriver);
 	}
 
 	@Override
 	public void openSupremeShopNewPage(WebDriver webDriver) throws BeardRunTimeException {
-		supremeShopAllPage.openSupremeShopNewPage(webDriver);
+		supremeShopPage.openSupremeShopNewPage(webDriver);
 	}
 	
-	public void setSupremeShopAllPage(SupremeShopPage supremeShopAllPage) {
-		this.supremeShopAllPage = supremeShopAllPage;
+	public void setSupremeShopPage(SupremeShopPage supremeShopPage) {
+		this.supremeShopPage = supremeShopPage;
 	}
 
 

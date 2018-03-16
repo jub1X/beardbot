@@ -18,7 +18,7 @@ public class BeardDriver {
 		ChromeBotWebDriver chromeBotWebDriver = new ChromeBotWebDriver();
 		WebDriver webDriver = chromeBotWebDriver.createNewChromeWebDriver();
 		supremeBotAPI.openSupremeShopAllPage(webDriver);
-		supremeBotAPI.retrieveAllNewProductLinksWithSoldOutStatus(webDriver);
+		supremeBotAPI.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver);
 		webDriver.close();
 	}
 }
