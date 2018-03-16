@@ -7,10 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.beard.exceptions.BeardRunTimeException;
+import com.beard.model.LocatorsType;
 
 public class PageLocators {
 
-	public WebElement getWebElement(Locators locator,String elementIdentifier, WebDriver webDriver)
+	public WebElement getWebElement(LocatorsType locator,String elementIdentifier, WebDriver webDriver)
 			throws BeardRunTimeException {
 		WebElement webElement = null;
 		switch (locator) {

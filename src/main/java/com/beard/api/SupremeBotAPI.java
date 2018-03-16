@@ -2,7 +2,6 @@ package com.beard.api;
 
 import java.util.Map;
 import org.openqa.selenium.WebDriver;
-
 import com.beard.exceptions.BeardRunTimeException;
 import com.beard.pages.SupremeShopPage;
 
@@ -24,9 +23,10 @@ public class SupremeBotAPI implements SupremeBotAPInterface {
 		supremeShopPage.openSupremeShopNewPage(webDriver);
 	}
 	
+	@Override
 	public void setSupremeShopPage(SupremeShopPage supremeShopPage) {
 		this.supremeShopPage = supremeShopPage;
 	}
-
+	
 
 }

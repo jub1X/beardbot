@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.beard.exceptions.BeardRunTimeException;
 import com.beard.locators.SupremeEntireItemsLocator;
+import com.beard.pages.utilties.SupremeShopPageHelper;
 
 public class SupremeShopPage extends SupremeEntireItemsLocator {
 
@@ -18,7 +19,8 @@ public class SupremeShopPage extends SupremeEntireItemsLocator {
 	private final static String ARTICLE_STATUS_DIV = "div > a > div";
 	private final static String ARTICLE_PRODUCT_LINK_DIV = "div > a";
 
-
+	private SupremeShopPageHelper supremeShopPageHelper;
+	
 	public void openSupremeShopAllPage(WebDriver webDriver) throws BeardRunTimeException {
 		webDriver.get(SUPREME_WEBSITE_ALL_PRODUCTS);
 	}
@@ -66,4 +68,10 @@ public class SupremeShopPage extends SupremeEntireItemsLocator {
 			return false;
 		}
 	}
+
+	public void setSupremeShopPageHelper(SupremeShopPageHelper supremeShopPageHelper) {
+		this.supremeShopPageHelper = supremeShopPageHelper;
+	}
+	
+	
 }

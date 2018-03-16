@@ -1,6 +1,6 @@
-package com.beard.locators;
+package com.beard.model;
 
-public enum Locators {
+public enum LocatorsType {
 	
 	CSS("cssselector"), 
 	ID("id"), 
@@ -12,7 +12,7 @@ public enum Locators {
 	
 	private String selectorName;
 
-	Locators(String selectorName) {
+	LocatorsType(String selectorName) {
 		this.selectorName = selectorName;
 	}
 
