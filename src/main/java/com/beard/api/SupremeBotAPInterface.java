@@ -1,8 +1,6 @@
 package com.beard.api;
 
 import java.util.List;
-import java.util.Map;
-
 import org.openqa.selenium.WebDriver;
 import com.beard.exceptions.BeardRunTimeException;
 import com.beard.model.ProductInformation;

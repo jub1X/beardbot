@@ -17,7 +17,7 @@ public class BeardDriver {
 	public void startBot() throws BeardRunTimeException {
 		ChromeBotWebDriver chromeBotWebDriver = new ChromeBotWebDriver();
 		WebDriver webDriver = chromeBotWebDriver.createNewChromeWebDriver();
-		supremeBotAPI.openSupremeShopAllPage(webDriver);
+		supremeBotAPI.openSupremeShopNewPage(webDriver);
 		supremeBotAPI.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver).stream()
 				.forEach(ProductInformation -> System.out.println(ProductInformation.toString()));
 		webDriver.close();

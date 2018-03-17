@@ -15,7 +15,6 @@ public class SupremeShopPageController extends SupremeEntireItemsLocator {
 
 	private final static String SUPREME_WEBSITE_ALL_PRODUCTS = "http://www.supremenewyork.com/shop/all";
 	private final static String SUPREME_WEBSITE_ALL_PRODUCTS_NEW = "http://www.supremenewyork.com/shop/new";
-
 	private final static String CONTAINER_FULL_OF_ARTICLES_XPATH = "//*[@id=\"container\"]/article";
 	private final static String ARTICLE_STATUS_DIV = "div > a > div";
 	private final static String ARTICLE_PRODUCT_LINK_DIV = "div > a";
