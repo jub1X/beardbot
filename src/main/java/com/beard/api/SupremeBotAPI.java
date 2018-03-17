@@ -1,8 +1,9 @@
 package com.beard.api;
 
-import java.util.Map;
+import java.util.List;
 import org.openqa.selenium.WebDriver;
 import com.beard.exceptions.BeardRunTimeException;
+import com.beard.model.ProductInformation;
 import com.beard.pages.SupremeShopPage;
 
 public class SupremeBotAPI implements SupremeBotAPInterface {
@@ -10,7 +11,7 @@ public class SupremeBotAPI implements SupremeBotAPInterface {
 	private SupremeShopPage supremeShopPage;
 
 	@Override
-	public Map<String, Boolean> retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(WebDriver webDriver) throws BeardRunTimeException {
+	public List<ProductInformation> retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(WebDriver webDriver) throws BeardRunTimeException {
 		return supremeShopPage.retrieveAllAvailableProductItemsAndSoldOutStatus(webDriver);
 	}
 	@Override
