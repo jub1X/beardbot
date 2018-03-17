@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 
 import com.beard.api.SupremeBotAPI;
 import com.beard.api.SupremeBotAPInterface;
-import com.beard.pages.SupremeShopPage;
+import com.beard.pages.SupremeShopPageController;
 
 @Configuration
 @Import(SupremeBotHelperConfig.class)
@@ -23,8 +23,8 @@ public class SupremeBotConfig {
 	}
 	
 	@Bean
-	public SupremeShopPage supremeShopAllPage() {
-		SupremeShopPage supremeShopAllPage = new SupremeShopPage();
+	public SupremeShopPageController supremeShopAllPage() {
+		SupremeShopPageController supremeShopAllPage = new SupremeShopPageController();
 		supremeShopAllPage.setSupremeShopPageHelper(supremeBotHelperConfig.supremeShopPageHelper());
 		return supremeShopAllPage;	
 	}

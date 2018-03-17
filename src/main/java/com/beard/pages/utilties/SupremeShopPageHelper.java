@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.beard.exceptions.BeardRunTimeException;
 import com.beard.model.ClothingType;
 import com.beard.model.ProductInformation;
 
@@ -20,18 +21,21 @@ public class SupremeShopPageHelper {
 	 * 
 	 */
 	public List<ProductInformation> trimProductLinkAndCreateProductInformationList(
-			Map<String, Boolean> productLinkAndSoldOutStatusMap) {
+			Map<String, Boolean> productLinkAndSoldOutStatusMap) throws BeardRunTimeException {
 		List<ProductInformation> productInformationList = new ArrayList<ProductInformation>();
-
 		for (Entry<String, Boolean> productLinkAndSoldOutStatus : productLinkAndSoldOutStatusMap.entrySet()) {
 			String productLink = productLinkAndSoldOutStatus.getKey();
 			Matcher matcher = PATTERN_LINK.matcher(productLink);
-			if (matcher.find()) {
-				String productCode = matcher.group(3);
-				ClothingType clothingType = ClothingType.returnClothingTypeFromStr(matcher.group(1));
-				productInformationList.add(new ProductInformation(productLink, productCode, clothingType,
-						productLinkAndSoldOutStatus.getValue()));
+			if (!matcher.find()) {
+				throw new BeardRunTimeException("ERROR: Failed to find any matches with regex pattern "
+						+ PATTERN_LINK.toString() + " with product link " + productLink);
 			}
+			String productCode = matcher.group(3);
+			ClothingType clothingType = ClothingType.returnClothingTypeFromStr(matcher.group(1));
+			if (clothingType == ClothingType.NA)
+				throw new BeardRunTimeException("ERROR: Failed to find clothing type from value " + matcher.group(1));
+			productInformationList.add(new ProductInformation(productLink, productCode, clothingType,
+					productLinkAndSoldOutStatus.getValue()));
 		}
 		return productInformationList;
 	}
