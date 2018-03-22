@@ -1,9 +1,14 @@
 package com.beard.driver;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Controller;
 import com.beard.api.SupremeBotAPInterface;
 import com.beard.exceptions.BeardRunTimeException;
+import com.beard.model.ClothingType;
+import com.beard.model.ProductInformation;
 
 @Controller
 public class BeardDriver {
@@ -18,8 +23,15 @@ public class BeardDriver {
 		ChromeBotWebDriver chromeBotWebDriver = new ChromeBotWebDriver();
 		WebDriver webDriver = chromeBotWebDriver.createNewChromeWebDriver();
 		supremeBotAPI.openSupremeShopNewPage(webDriver);
-		supremeBotAPI.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver).stream()
-				.forEach(ProductInformation -> System.out.println(ProductInformation.toString()));
+		List<ProductInformation> productInformationList = supremeBotAPI
+				.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver);
+	//	productInformationList.stream()
+		//		.forEach(ProductInformation -> System.out.println(ProductInformation.toString()));
+		List<ProductInformation> tshirtList =productInformationList.stream()
+				.filter(productInformation -> ClothingType.TSHIRT == productInformation.getClothingType())
+				.collect(Collectors.toList());
+		tshirtList.stream()
+		.forEach(ProductInformation -> System.out.println(ProductInformation.toString()));
 		webDriver.close();
 	}
 }
