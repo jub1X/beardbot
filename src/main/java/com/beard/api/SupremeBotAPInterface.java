@@ -11,6 +11,8 @@ public interface SupremeBotAPInterface {
 	public void openSupremeShopAllPage(WebDriver webDriver) throws BeardRunTimeException;
 
 	public void openSupremeShopNewPage(WebDriver webDriver) throws BeardRunTimeException;
+	
+	public void openSupremeAnyClothingProductLinkPage(WebDriver webDriver,String productlink) throws BeardRunTimeException ;
 
 	public List<ProductInformation> retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(WebDriver webDriver) throws BeardRunTimeException;
 

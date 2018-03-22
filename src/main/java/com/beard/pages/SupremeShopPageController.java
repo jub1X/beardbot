@@ -40,6 +40,10 @@ public class SupremeShopPageController extends SupremeEntireItemsLocator {
 	public void openSupremeShopNewPage(WebDriver webDriver) throws BeardRunTimeException {
 		webDriver.get(SUPREME_WEBSITE_ALL_PRODUCTS_NEW);
 	}
+	
+	public void openSupremeAnyClothingProductLinkPage(WebDriver webDriver,String productlink) throws BeardRunTimeException {
+		webDriver.get(productlink);
+	}
 
 	/**
 	 * Retrieves all available products from supreme and returns map of product link

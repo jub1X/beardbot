@@ -22,16 +22,20 @@ public class BeardDriver {
 	public void startBot() throws BeardRunTimeException {
 		ChromeBotWebDriver chromeBotWebDriver = new ChromeBotWebDriver();
 		WebDriver webDriver = chromeBotWebDriver.createNewChromeWebDriver();
-		supremeBotAPI.openSupremeShopNewPage(webDriver);
+		supremeBotAPI.openSupremeShopAllPage(webDriver);
 		List<ProductInformation> productInformationList = supremeBotAPI
 				.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver);
-	//	productInformationList.stream()
-		//		.forEach(ProductInformation -> System.out.println(ProductInformation.toString()));
-		List<ProductInformation> tshirtList =productInformationList.stream()
-				.filter(productInformation -> ClothingType.TSHIRT == productInformation.getClothingType())
+		List<ProductInformation> accessoriesList =productInformationList.stream()
+				.filter(productInformation -> ClothingType.ACCESSORIES == productInformation.getClothingType())
 				.collect(Collectors.toList());
-		tshirtList.stream()
+		accessoriesList.stream()
 		.forEach(ProductInformation -> System.out.println(ProductInformation.toString()));
-		webDriver.close();
+		for(ProductInformation product : accessoriesList) {
+			if(!product.getIsSoldOut()) {
+				supremeBotAPI.openSupremeAnyClothingProductLinkPage(webDriver, product.getProductLink());
+			break;
+			}
+		}
+		//webDriver.close();
 	}
 }

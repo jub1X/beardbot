@@ -25,9 +25,13 @@ public class SupremeBotAPI implements SupremeBotAPInterface {
 	}
 	
 	@Override
+	public void openSupremeAnyClothingProductLinkPage(WebDriver webDriver, String productlink) throws BeardRunTimeException {
+		supremeShopPage.openSupremeAnyClothingProductLinkPage(webDriver, productlink);
+		
+	}
+	@Override
 	public void setSupremeShopPage(SupremeShopPageController supremeShopPage) {
 		this.supremeShopPage = supremeShopPage;
 	}
-	
 
 }
