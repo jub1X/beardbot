@@ -33,6 +33,7 @@ public class BeardDriver {
 		for(ProductInformation product : accessoriesList) {
 			if(!product.getIsSoldOut()) {
 				supremeBotAPI.openSupremeAnyClothingProductLinkPage(webDriver, product.getProductLink());
+				supremeBotAPI.addProductToCartFromProductPage(webDriver);
 			break;
 			}
 		}

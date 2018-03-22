@@ -52,6 +52,10 @@ public class PageLocators {
         }
     }
 	
+	public void clickAddToCartButtonOnProductPage(WebDriver webDriver) {
+		webDriver.findElement(By.xpath("//*[@id=\"add-remove-buttons\"]/input")).click();;
+	}
+	
 	public String getTextFromWebElementFromJavaScript(WebDriver webDriver, WebElement webElement) {
 		return (String) executeJavaScript(webDriver,"return $(arguments[0] ).text()",webElement);
 	}
