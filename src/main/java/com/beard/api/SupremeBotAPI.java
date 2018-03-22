@@ -1,9 +1,7 @@
 package com.beard.api;
 
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
-
 import com.beard.exceptions.BeardRunTimeException;
 import com.beard.model.ProductInformation;
 import com.beard.pages.SupremeShopPageController;
@@ -39,11 +37,11 @@ public class SupremeBotAPI implements SupremeBotAPInterface {
 		
 	}
 	@Override
-	public void setSupremeShopPage(SupremeShopPageController supremeShopPage) {
+	public void setSupremeShopPageController(SupremeShopPageController supremeShopPage) {
 		this.supremeShopPage = supremeShopPage;
 	}
 	@Override
-	public void setSupremeShopProductPage(SupremeShopProductPageController supremeShopProductPage) {
+	public void setSupremeShopProductPageController(SupremeShopProductPageController supremeShopProductPage) {
 		this.supremeShopProductPage = supremeShopProductPage;
 	}
 

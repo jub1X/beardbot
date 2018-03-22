@@ -19,7 +19,7 @@ public interface SupremeBotAPInterface {
 
 	public List<ProductInformation> retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(WebDriver webDriver) throws BeardRunTimeException;
 
-	public void setSupremeShopPage(SupremeShopPageController supremeShopPage);
+	public void setSupremeShopPageController(SupremeShopPageController supremeShopPage);
 
-	public void setSupremeShopProductPage(SupremeShopProductPageController SupremeShopProductPage);
+	public void setSupremeShopProductPageController(SupremeShopProductPageController SupremeShopProductPage);
 }

@@ -19,20 +19,20 @@ public class SupremeBotConfig {
 	@Bean
 	public SupremeBotAPInterface supremeBotAPI() {
 		SupremeBotAPI supremeBotAPI = new SupremeBotAPI();
-		supremeBotAPI.setSupremeShopPage(supremeShopAllPage());
-		supremeBotAPI.setSupremeShopProductPage(supremeShopProductPage());
+		supremeBotAPI.setSupremeShopPageController(supremeShopAllPageController());
+		supremeBotAPI.setSupremeShopProductPageController(supremeShopProductPageController());
 		return supremeBotAPI;
 	}
 	
 	@Bean
-	public SupremeShopPageController supremeShopAllPage() {
+	public SupremeShopPageController supremeShopAllPageController() {
 		SupremeShopPageController supremeShopAllPage = new SupremeShopPageController();
 		supremeShopAllPage.setSupremeShopPageHelper(supremeBotHelperConfig.supremeShopPageHelper());
 		return supremeShopAllPage;	
 	}
 	
 	@Bean
-	public SupremeShopProductPageController supremeShopProductPage() {
+	public SupremeShopProductPageController supremeShopProductPageController() {
 		SupremeShopProductPageController supremeProductPage = new SupremeShopProductPageController();
 		return supremeProductPage;	
 	}

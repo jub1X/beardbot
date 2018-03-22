@@ -64,6 +64,6 @@ public class PageLocators {
 		return getJavaScriptExecutor(webDriver).executeScript(script, webElement);
 	}
 	public JavascriptExecutor getJavaScriptExecutor(WebDriver webDriver) {
-		return(JavascriptExecutor) webDriver;
+		return (JavascriptExecutor) webDriver;
 	}
 }
