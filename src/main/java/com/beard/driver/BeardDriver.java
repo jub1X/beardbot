@@ -19,25 +19,30 @@ public class BeardDriver {
 		this.supremeBotAPI = supremeBotAPI;
 	}
 
-	public void startBot() throws BeardRunTimeException {
+	public void startBot() {
 		ChromeBotWebDriver chromeBotWebDriver = new ChromeBotWebDriver();
 		WebDriver webDriver = chromeBotWebDriver.createNewChromeWebDriver();
-		supremeBotAPI.openSupremeShopAllPage(webDriver);
-		List<ProductInformation> productInformationList = supremeBotAPI
-				.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver);
-		List<ProductInformation> accessoriesList =productInformationList.stream()
-				.filter(productInformation -> ClothingType.ACCESSORIES == productInformation.getClothingType())
-				.collect(Collectors.toList());
-		accessoriesList.stream()
-		.forEach(ProductInformation -> System.out.println(ProductInformation.toString()));
-		for(ProductInformation product : accessoriesList) {
-			if(!product.getIsSoldOut()) {
-				supremeBotAPI.openSupremeAnyClothingProductLinkPage(webDriver, product.getProductLink());
-				supremeBotAPI.addProductToCartFromProductPage(webDriver);
-			break;
+		try {
+			supremeBotAPI.openSupremeShopAllPage(webDriver);
+			List<ProductInformation> productInformationList = supremeBotAPI
+					.retrieveAllNewProductLinksWithSoldOutStatusOnTheShopAllPage(webDriver);
+			List<ProductInformation> accessoriesList = productInformationList.stream()
+					.filter(productInformation -> ClothingType.ACCESSORIES == productInformation.getClothingType())
+					.collect(Collectors.toList());
+		//	accessoriesList.stream().forEach(ProductInformation -> System.out.println(ProductInformation.toString()));
+			for (ProductInformation product : accessoriesList) {
+				if (!product.getIsSoldOut()) {
+					supremeBotAPI.openSupremeAnyClothingProductLinkPage(webDriver, product.getProductLink());
+					supremeBotAPI.clickAddProductToCartFromProductPage(webDriver);
+					break;
+				}
 			}
+			supremeBotAPI.clickCheckOutNowButtonForAnyPage(webDriver);
+		} catch (BeardRunTimeException e) {
+			System.out.println( e);
 		}
-		//webDriver.close();
+		
+	 webDriver.close();
 	}
-	
+
 }

@@ -15,13 +15,15 @@ public class ChromeBotWebDriver {
 		System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("test-type");
-		chromeOptions.addArguments("start-maximized");
+	//	chromeOptions.addArguments("start-maximized");
 		chromeOptions.addArguments("--js-flags=--expose-gc");
 		chromeOptions.addArguments("--enable-precise-memory-info");
 		chromeOptions.addArguments("--disable-popup-blocking");
 		chromeOptions.addArguments("--disable-default-apps");
 		chromeOptions.addArguments("test-type=browser");
 		chromeOptions.addArguments("disable-infobars");
+		//chromeOptions.addArguments("--headless");
+		//chromeOptions.addArguments("window-size=1200x600");
 		return chromeOptions;
 	}
 }

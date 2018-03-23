@@ -75,7 +75,7 @@ public class SupremeShopPageController extends SupremeEntireItemsLocator {
 	 */
 	public boolean checkIfProductIsSoldOut(WebDriver webDriver, String productLink, WebElement articleWebElement)
 			throws BeardRunTimeException {
-		if (isWebElementPresent(webDriver, articleWebElement, By.cssSelector(ARTICLE_STATUS_DIV))) {
+		if (isSubWebElementPresent(webDriver, articleWebElement, By.cssSelector(ARTICLE_STATUS_DIV))) {
 			WebElement articleElement = articleWebElement.findElement(By.cssSelector(ARTICLE_STATUS_DIV));
 			if (getTextFromWebElementFromJavaScript(webDriver, articleElement).trim().equalsIgnoreCase("sold out")) {
 				return true;

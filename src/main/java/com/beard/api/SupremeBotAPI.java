@@ -32,9 +32,14 @@ public class SupremeBotAPI implements SupremeBotAPInterface {
 		
 	}
 	@Override
-	public void addProductToCartFromProductPage(WebDriver webDriver) {
+	public void clickAddProductToCartFromProductPage(WebDriver webDriver) throws BeardRunTimeException {
 		supremeShopProductPage.clickAddToCartButtonOnProductPage(webDriver);
 		
+	}
+	
+	@Override
+	public void clickCheckOutNowButtonForAnyPage(WebDriver webDriver) throws BeardRunTimeException {
+		supremeShopProductPage.clickCheckOutNowButtonForAnyPage(webDriver);
 	}
 	@Override
 	public void setSupremeShopPageController(SupremeShopPageController supremeShopPage) {
